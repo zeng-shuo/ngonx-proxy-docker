@@ -17,4 +17,6 @@ RUN set -e \
 	
 COPY nginx.conf /etc/nginx/conf
 
+EXPOSE 80
+
 CMD ["nginx"]
