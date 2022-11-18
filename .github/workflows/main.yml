@@ -18,7 +18,7 @@ jobs:
           username: ${{ secrets.DOCKER_UNAME }}
           password: ${{ secrets.DOCKER_PASSWD }}
           
-      - name: pull、tag、push
+      - name: build
         shell: bash
         run: |
           # image="registry.k8s.io/ingress-nginx/controller:v1.3.0"
