@@ -14,5 +14,7 @@ RUN set -e \
 	&& ./configure --add-module=/usr/local/ngx_http_proxy_connect_module-0.0.3 --prefix=/etc/nginx \
 	&& make && make install \
 	&& ln -s /etc/nginx/bin/nginx /usr/bin/nginx
+	
+COPY nginx.conf /etc/nginx/conf
 
 CMD ["nginx"]
