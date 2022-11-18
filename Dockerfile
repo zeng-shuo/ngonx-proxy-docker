@@ -16,6 +16,7 @@ RUN set -e \
 	&& ln -s /etc/nginx/sbin/nginx /usr/bin/nginx
 	
 COPY nginx.conf /etc/nginx/conf
+COPY htpasswd /etc/nginx/conf
 
 EXPOSE 80
 
