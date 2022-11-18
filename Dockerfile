@@ -13,7 +13,7 @@ RUN set -e \
 	&& patch -p1 < /usr/local/proxy_connect_rewrite_102101.patch \
 	&& ./configure --add-module=/usr/local/ngx_http_proxy_connect_module-0.0.3 --prefix=/etc/nginx \
 	&& make && make install \
-	&& ln -s /etc/nginx/bin/nginx /usr/bin/nginx
+	&& ln -s /etc/nginx/sbin/nginx /usr/bin/nginx
 	
 COPY nginx.conf /etc/nginx/conf
 
