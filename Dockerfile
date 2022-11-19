@@ -21,6 +21,8 @@ COPY nginx.conf /etc/nginx/conf/
 COPY htpasswd /etc/nginx/conf/
 COPY default.conf /etc/nginx/conf.d/
 
+WORKDIR /etc/nginx
+
 EXPOSE 80
 
 CMD ["nginx", "-g", "daemon off;"]
