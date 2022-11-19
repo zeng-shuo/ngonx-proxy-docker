@@ -15,9 +15,9 @@ RUN set -e \
 	&& make && make install \
 	&& ln -s /etc/nginx/sbin/nginx /usr/bin/nginx
 	
-COPY nginx.conf /etc/nginx/conf
-COPY htpasswd /etc/nginx/conf
-COPY default.conf /etc/nginx/conf.d
+COPY nginx.conf /etc/nginx/conf/
+COPY htpasswd /etc/nginx/conf/
+COPY default.conf /etc/nginx/conf.d/
 
 EXPOSE 80
 
