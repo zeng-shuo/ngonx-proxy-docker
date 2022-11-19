@@ -14,6 +14,8 @@ RUN set -e \
 	&& ./configure --add-module=/usr/local/ngx_http_proxy_connect_module-0.0.3 --prefix=/etc/nginx \
 	&& make && make install \
 	&& ln -s /etc/nginx/sbin/nginx /usr/bin/nginx
+	&& ln -sf /dev/stdout /etc/nginx/logs/access.log \
+    	&& ln -sf /dev/stderr /etc/nginx/logs/error.log
 	
 COPY nginx.conf /etc/nginx/conf/
 COPY htpasswd /etc/nginx/conf/
