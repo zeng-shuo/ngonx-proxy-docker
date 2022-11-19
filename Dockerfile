@@ -17,7 +17,7 @@ RUN set -e \
 	
 COPY nginx.conf /etc/nginx/conf
 COPY htpasswd /etc/nginx/conf
-COPY default.conf /etc/nginx/conf.d/*.conf
+COPY default.conf /etc/nginx/conf.d
 
 EXPOSE 80
 
