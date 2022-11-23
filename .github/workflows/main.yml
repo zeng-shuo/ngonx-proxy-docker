@@ -24,6 +24,6 @@ jobs:
           latestTag=${{ secrets.DOCKER_UNAME }}/nginx-proxy
           versionTag=$latestTag:1.22.1
           docker build -t $latestTag .
-          docker tag $latestTag versionTag
+          docker tag $latestTag $versionTag
           docker push $latestTag
           docker push $versionTag
