@@ -21,6 +21,9 @@ jobs:
       - name: build
         shell: bash
         run: |
-          myTag=${{ secrets.DOCKER_UNAME }}/nginx-proxy:1.22.1
-          docker build -t $myTag .
-          docker push $myTag
+          latestTag=${{ secrets.DOCKER_UNAME }}/nginx-proxy
+          versionTag=$latestTag:1.22.1
+          docker build -t $latestTag .
+          docker tag $latestTag versionTag
+          docker push $latestTag
+          docker push $versionTag
