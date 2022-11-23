@@ -1,4 +1,4 @@
-name: generic-sync
+name: build-nginx-proxy
 
 on:
   workflow_dispatch:
@@ -21,8 +21,6 @@ jobs:
       - name: build
         shell: bash
         run: |
-          # image="registry.k8s.io/ingress-nginx/controller:v1.3.0"
-          # docker pull $image
           myTag=${{ secrets.DOCKER_UNAME }}/nginx-proxy:1.22.1
           docker build -t $myTag .
           docker push $myTag
