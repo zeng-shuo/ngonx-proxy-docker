@@ -18,7 +18,7 @@ RUN set -e \
     	&& ln -sf /dev/stderr /etc/nginx/logs/error.log
 	
 COPY nginx.conf /etc/nginx/conf/
-COPY htpasswd /etc/nginx/conf/
+COPY htpasswd /etc/nginx/conf.d/
 COPY default.conf /etc/nginx/conf.d/
 
 WORKDIR /etc/nginx
