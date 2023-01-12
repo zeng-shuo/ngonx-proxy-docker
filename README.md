@@ -18,10 +18,9 @@ docker run -d --name nginx-proxy -p 8888:80 -v /your/path:/etc/nginx/conf.d shuk
 import requests
 from requests.auth import HTTPBasicAuth
 proxy = {
-    "http":"http://your_ip:8888",
-    "https":"http://your_ip:8888"
+    "http":"http://username:password@your_ip:8888",
+    "https":"http://username:password@your_ip:8888"
 }
-requests.get(url="",proxies=proxy,auth=HTTPBasicAuth("username","password"))
+requests.get(url="",proxies=proxy)
 ```
-6. 经测试，有些网站会报401错误，这个应该是nginx代理模块的问题，暂时没办法解决，或者尝试注释掉basic_auth认证的配置，没有密码的代理服务器可能很快会被别人盯上，变成别人的免费代理。
-7. 别忘了star
+6. 记得star
